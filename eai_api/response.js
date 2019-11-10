@@ -8,6 +8,12 @@ exports.ok = function(status, values, res) {
         values: values
       };
       break;
+    case 400:
+      var data = {
+        status: status,
+        values: values
+      };
+      break;
     case 404:
       var data = {
         status: status,

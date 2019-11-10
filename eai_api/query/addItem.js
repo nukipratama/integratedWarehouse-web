@@ -2,7 +2,7 @@
 var response = require("../response");
 var connection = require("../connection");
 
-exports.addOutletQuery = function(req, res) {
+exports.addItemQuery = function(req, res) {
   var oid = req.params.outletID;
   connection.query(
     "SELECT * FROM `tb_outlet` WHERE `outlet_id`=?",
@@ -14,17 +14,19 @@ exports.addOutletQuery = function(req, res) {
         if (rows[0]["outlet_role"] !== "warehouse") {
           response.ok(401, "rows", res);
         } else {
-          var oid = makeid(20);
-          var role = req.body.outlet_role;
-          var name = req.body.outlet_name;
-          var desc = req.body.outlet_desc;
-          var address = req.body.outlet_address;
+          var id = makeid(5);
+          var name = req.body.barang_name;
+          var desc = req.body.barang_desc;
+          var cat = req.body.barang_cat;
+          var price = req.body.barang_price;
+          var img = req.body.barang_img;
+
           connection.query(
-            "INSERT INTO `tb_outlet`(`outlet_id`,`outlet_role`,`outlet_name`,`outlet_desc`,`outlet_address`) VALUES (?,?,?,?,?)",
-            [oid, role, name, desc, address],
+            "INSERT INTO `tb_barang`(`barang_id`,`barang_name`,`barang_desc`,`barang_cat`,`barang_price`,`barang_img`) VALUES (?,?,?,?,?,?)",
+            [id, name, desc, cat, price, img],
             function(error, rows, fields) {
               if (error) {
-                response.ok(400, error.code, res);
+                response(400, error.code, res);
               } else {
                 rows.message = "Data Inserted";
                 response.ok(200, rows, res);

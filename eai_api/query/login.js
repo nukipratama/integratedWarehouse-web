@@ -3,7 +3,7 @@ var response = require("../response");
 var connection = require("../connection");
 
 exports.loginQuery = function(req, res) {
-  var oid = req.params.users_outletID;
+  var oid = req.params.outletID;
   var uname = req.body.users_uname;
   var pass = req.body.users_pass;
   connection.query(
