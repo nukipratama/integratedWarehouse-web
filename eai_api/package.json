@@ -1,0 +1,25 @@
+{
+  "name": "eai_api",
+  "version": "1.0.0",
+  "description": "RESTful API for AWN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nukipratama/integratedWarehouse-web.git"
+  },
+  "author": "np",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nukipratama/integratedWarehouse-web/issues"
+  },
+  "homepage": "https://github.com/nukipratama/integratedWarehouse-web#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.4"
+  }
+}
