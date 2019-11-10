@@ -7,6 +7,7 @@ body :
 ADD USER
 endpoint : localhost:3000/:outletID/addUser
 body :
+  -users_outletID
   -users_uname
   -users_pass
   -users_email

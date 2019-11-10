@@ -5,4 +5,5 @@ module.exports = function(app) {
   app.route("/").get(todoList.index);
   app.route("/:users_outletID/login/").get(todoList.login);
   app.route("/:users_outletID/addUser/").post(todoList.addUser);
+  app.route("/:users_outletID/addOutlet/").post(todoList.addOutlet);
 };

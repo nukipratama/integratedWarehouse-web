@@ -2,7 +2,7 @@
 var response = require("../response");
 var connection = require("../connection");
 
-exports.addUserQuery = function(req, res) {
+exports.addOutletQuery = function(req, res) {
   var oid = req.params.users_outletID;
   connection.query(
     "SELECT `outlet_role` FROM `tb_outlet` WHERE `outlet_id` = ? ",
@@ -20,15 +20,16 @@ exports.addUserQuery = function(req, res) {
     }
   );
 };
+
 function addUser(req, res) {
-  var oid = req.body.users_outletID;
-  var uname = req.body.users_uname;
-  var pass = req.body.users_pass;
-  var email = req.body.users_email;
-  var role = req.body.users_role;
+  var oid = req.body.outlet_id;
+  var role = req.body.outlet_role;
+  var name = req.body.outlet_name;
+  var desc = req.body.outlet_desc;
+  var address = req.body.outlet_address;
   connection.query(
-    "INSERT INTO `tb_users`(`users_Uname`,`users_pass`,`users_email`,`users_role`,`users_outletID`) VALUES (?,?,?,?,?)",
-    [uname, pass, email, role, oid],
+    "INSERT INTO `tb_outlet`(`outlet_id`,`outlet_role`,`outlet_name`,`outlet_desc`,`outlet_address`) VALUES (?,?,?,?,?)",
+    [oid, role, name, desc, address],
     function(error, rows, fields) {
       if (error) {
         console.log(error);
