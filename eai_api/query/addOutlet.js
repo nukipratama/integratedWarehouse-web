@@ -22,7 +22,7 @@ exports.addOutletQuery = function(req, res) {
 };
 
 function addUser(req, res) {
-  var oid = req.body.outlet_id;
+  var oid = makeid(20);
   var role = req.body.outlet_role;
   var name = req.body.outlet_name;
   var desc = req.body.outlet_desc;
@@ -39,4 +39,16 @@ function addUser(req, res) {
       }
     }
   );
+}
+
+function makeid(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  var d = new Date();
+  return result + d.getTime();
 }

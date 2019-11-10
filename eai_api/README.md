@@ -16,7 +16,6 @@ body :
 ADD OUTLET
 endpoint : localhost:3000/{outletID}/addUser
 body :
--outlet_id
 -outlet_role
 -outlet_name
 -outlet_desc
