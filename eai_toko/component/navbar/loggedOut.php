@@ -2,7 +2,7 @@
     <a class="navbar-brand" href="#">
         <span class="text-primary">B</span>arokah
         <span class="text-youtube">M</span>art
-        <span class="text-warning font-weight-bold">POS</span>
+        <span class="text-success font-weight-bold">POS</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                                             </div>
-                                            <input name="username" type="text" class="form-control" placeholder="username" aria-label="Username" aria-describedby="basic-addon1" />
+                                            <input name="username" type="text" class="form-control" placeholder="username" aria-label="Username" aria-describedby="basic-addon1" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -46,7 +46,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon2"><i class="fas fa-key"></i></span>
                                             </div>
-                                            <input name="password" type="password" class="form-control" placeholder="password" aria-label="Password" aria-describedby="basic-addon2" />
+                                            <input name="password" type="password" class="form-control" placeholder="password" aria-label="Password" aria-describedby="basic-addon2" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">

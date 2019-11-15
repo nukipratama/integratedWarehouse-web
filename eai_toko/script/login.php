@@ -18,8 +18,15 @@ if (isset($_POST['submit'])) {
     $ch = curl_init('http://localhost:3000/Boj0aBsuLz7iOjg3sYs91573734058799/login');
     curl_setopt_array($ch, $options);
     $response = json_decode(curl_exec($ch), true);
-    if ($response['status'] === 200) {
-        $_SESSION['loginName'] =  $response['values'][0]['users_email'];
+    switch ($response['status']) {
+        case 200:
+            $_SESSION['outletID'] = $response['values'][0]['users_outletID'];
+            $_SESSION['loginName'] = $response['values'][0]['users_Uname'];
+            $_SESSION['loginRole'] = $response['values'][0]['users_role'];
+            return header("Location:../page_dashboard.php");
+        case 401:
+            return header("Location:../index.php?status=401");
+        default:
+            return header("Location:../index.php?status=500");
     }
-    return header("Location:../index.php");
 }
