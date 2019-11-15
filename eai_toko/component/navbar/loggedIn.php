@@ -27,17 +27,17 @@
 
         <ul class="list-unstyled components">
             <p class="text-center">Menu</p>
-            <li class="<?= $navDashboard ?>">
-                <a href="./page_dashboard.php">Dashboard</a>
+            <li>
+                <a href="https://localhost/eai_toko/eai_toko/page_dashboard.php">Dashboard</a>
             </li>
-            <li class="<?= $navProfile ?>">
+            <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Edit Profile</a>
+                        <a href="https://localhost/eai_toko/eai_toko/page_editProfile.php">Edit Profile</a>
                     </li>
                     <li>
-                        <a href="#">Change Password</a>
+                        <a href="https://localhost/eai_toko/eai_toko/page_changePassword.php">Change Password</a>
                     </li>
                 </ul>
             </li>

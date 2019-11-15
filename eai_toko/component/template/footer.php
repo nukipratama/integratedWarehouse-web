@@ -6,9 +6,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <script src="./assets/js/avantui.js"></script>
 
-<!-- swup js -->
 <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
-
+<script>
+    var swup;
+    if (swup == null) {
+        const options = {
+            cache: false,
+            animateHistoryBrowsing: true
+        };
+        swup = new Swup(options);
+    }
+</script>
 <!-- sidebar js-->
 <script src="./assets/js/sidebar.js"></script>
 
