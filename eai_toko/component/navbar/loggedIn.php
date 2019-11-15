@@ -49,7 +49,3 @@
 
     <!-- Page Content Holder -->
     <div id="content">
-
-
-    </div>
-</div>
