@@ -5,7 +5,7 @@
         <span class="text-youtube">M</span>art
         <span class="text-success font-weight-bold">POS</span>
     </a>
-    <button type="button" id="sidebarCollapse" class="navbar-btn ">
+    <button type="button" id="sidebarCollapse" class="navbar-btn" onclick="navbarBtn()">
         <span></span>
         <span></span>
         <span></span>
@@ -17,7 +17,8 @@
 </nav>
 
 
-<div class="wrapper bg-github m-0">
+<div id="wrapper" class="wrapper bg-github m-0">
+
     <!-- Sidebar Holder -->
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -26,18 +27,29 @@
         </div>
 
         <ul class="list-unstyled components">
-            <p class="text-center">Menu</p>
-            <li>
-                <a href="https://localhost/eai_toko/eai_toko/page_dashboard.php">Dashboard</a>
+            <p class="text-center"><i class="fas fa-ellipsis-h"></i> Menu</p>
+            <li id="menuDashboard">
+                <a href="https://localhost/eai_toko/eai_toko/page_dashboard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
             </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
+            <li id="menuProfile">
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user-alt"></i> Profile</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
                         <a href="https://localhost/eai_toko/eai_toko/page_editProfile.php">Edit Profile</a>
                     </li>
                     <li>
                         <a href="https://localhost/eai_toko/eai_toko/page_changePassword.php">Change Password</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="menuItems">
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-store"></i> Items</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu1">
+                    <li>
+                        <a href="https://localhost/eai_toko/eai_toko/page_stock.php">Stock</a>
+                    </li>
+                    <li>
+                        <a href="https://localhost/eai_toko/eai_toko/page_warehouse.php">Warehouse</a>
                     </li>
                 </ul>
             </li>

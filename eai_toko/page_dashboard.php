@@ -1,15 +1,25 @@
 <?php
 session_start();
 include './component/template/header.php';
+$response = file_get_contents("http://localhost:3000/" . $_SESSION['outletID'] . "/requests");
+$response = json_decode($response, true);
+
 ?>
-<main id="swup" class="transition-fade">
+<div class="transition-fade">
+    <h2>Recent Requests</h2>
+    <div class="divider"></div>
     <?php
-    echo $_SESSION['loginRole'];
-    ?>
-    <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>asdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsaasdasdsadasdsadsa</p>
-</main>
+    foreach ($response["values"] as $key) { ?>
+        <div class="row">
+            <div class="col-md-8">
+                <?php
+                    $dt =  strtotime($key['req_date']);
+                    echo date("Y-m-d H:i:s T", $dt);
+                    ?>
+            </div>
+        </div>
+    <?php } ?>
+</div>
 
 <?php
 include './component/template/footer.php';

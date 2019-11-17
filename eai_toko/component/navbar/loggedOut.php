@@ -28,7 +28,7 @@
                     <div class="row no-gutters">
                         <div class="col-lg-12">
                             <div class="card-body">
-                                <h5 class="card-title lead">
+                                <h5 class="card-title lead text-dark">
                                     login with your employee id
                                 </h5>
                                 <div class="divider"></div>

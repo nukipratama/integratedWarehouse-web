@@ -11,11 +11,7 @@ exports.index = function(req, res) {
       if (rows.length < 1) {
         response.ok(401, "rows", res);
       } else {
-        // if (rows[0]["outlet_role"] !== "warehouse") {
-        //   response.ok(401, "rows", res);
-        // } else {
         response.ok(200, "Hello, " + rows[0]["outlet_name"], res);
-        // }
       }
     }
   );
