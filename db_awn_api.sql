@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 15, 2019 at 02:26 PM
+-- Generation Time: Nov 18, 2019 at 06:05 AM
 -- Server version: 8.0.17-0ubuntu2
 -- PHP Version: 7.3.8-1
 
@@ -43,7 +43,8 @@ CREATE TABLE `tb_barang` (
 INSERT INTO `tb_barang` (`no`, `barang_id`, `barang_name`, `barang_desc`, `barang_cat`, `barang_price`, `barang_img`) VALUES
 (1, '83mxf1573396962169', 'Indomie Goreng', 'Mi Instan Favorit anak kos', 'Instant', 50000, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'),
 (2, 'QmxRE1573397234863', 'Indomie Rebus', 'Mi Instan Favorit anak kos', 'Instant', 47000, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'),
-(3, 'pBI2r1573734016477', 'Malkist Abon', 'Mi Instan Favorit anak kos', 'Instant', 50000, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
+(3, 'pBI2r1573734016477', 'Malkist Abon', 'Mi Instan Favorit anak kos', 'Instant', 50000, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'),
+(4, 'qweeqewqewqasdaqwe', 'Goodday Coolin', 'Minuman Segar', 'Sachet', 20000, 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
 
 -- --------------------------------------------------------
 
@@ -93,12 +94,31 @@ INSERT INTO `tb_outlet` (`no`, `outlet_id`, `outlet_role`, `outlet_name`, `outle
 
 CREATE TABLE `tb_request` (
   `no` int(100) NOT NULL,
-  `req_id` varchar(255) NOT NULL,
   `req_outletID` varchar(255) NOT NULL,
   `req_barangID` varchar(255) NOT NULL,
   `req_barangQty` int(191) NOT NULL,
-  `req_date` timestamp NOT NULL
+  `req_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_request`
+--
+
+INSERT INTO `tb_request` (`no`, `req_outletID`, `req_barangID`, `req_barangQty`) VALUES
+(1, 'asdfghjkl', '1233321', 5),
+(2, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 3),
+(3, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 10),
+(4, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 3),
+(5, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 4),
+(6, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 4),
+(7, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 4),
+(8, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 111),
+(9, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 3),
+(10, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 4),
+(11, 'Boj0aBsuLz7iOjg3sYs91573734058799', '83mxf1573396962169', 3),
+(12, 'Boj0aBsuLz7iOjg3sYs91573734058799', 'QmxRE1573397234863', 412),
+(13, 'Boj0aBsuLz7iOjg3sYs91573734058799', 'pBI2r1573734016477', 111),
+(14, 'Boj0aBsuLz7iOjg3sYs91573734058799', 'qweeqewqewqasdaqwe', 12312);
 
 -- --------------------------------------------------------
 
@@ -163,8 +183,7 @@ ALTER TABLE `tb_outlet`
 -- Indexes for table `tb_request`
 --
 ALTER TABLE `tb_request`
-  ADD PRIMARY KEY (`no`),
-  ADD UNIQUE KEY `req_id` (`req_id`);
+  ADD PRIMARY KEY (`no`);
 
 --
 -- Indexes for table `tb_stock`
@@ -188,7 +207,7 @@ ALTER TABLE `tb_users`
 -- AUTO_INCREMENT for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
-  MODIFY `no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_history`
 --
@@ -203,7 +222,7 @@ ALTER TABLE `tb_outlet`
 -- AUTO_INCREMENT for table `tb_request`
 --
 ALTER TABLE `tb_request`
-  MODIFY `no` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tb_stock`
 --
