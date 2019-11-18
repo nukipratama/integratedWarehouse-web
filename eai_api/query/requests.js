@@ -11,17 +11,20 @@ exports.requestsQuery = function(req, res) {
       if (rows.length < 1) {
         response.ok(401, "rows", res);
       } else {
-        connection.query(
-          "SELECT * FROM `tb_request` WHERE `req_outletID`=?",
-          [oid],
-          function(error, rows, fields) {
-            if (error) {
-              response.ok(400, error.sqlMessage, res);
-            } else {
-              response.ok(200, rows, res);
+        if (rows[0]["outlet_role"] !== "warehouse") {
+          response.ok(401, "rows", res);
+        } else {
+          connection.query(
+            "SELECT * FROM `tb_request` WHERE  `req_status` = 0",
+            function(error, rows, fields) {
+              if (error) {
+                response.ok(400, error.sqlMessage, res);
+              } else {
+                response.ok(200, rows, res);
+              }
             }
-          }
-        );
+          );
+        }
       }
     }
   );
