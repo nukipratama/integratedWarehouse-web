@@ -22,4 +22,6 @@ include './component/template/header.php';
 
 
 
+
+
 include './component/template/footer.php';

@@ -26,7 +26,7 @@ exports.addItemQuery = function(req, res) {
             [id, name, desc, cat, price, img],
             function(error, rows, fields) {
               if (error) {
-                response(400, error.code, res);
+                response(400, error.sqlMessage, res);
               } else {
                 rows.message = "Data Inserted";
                 response.ok(200, rows, res);

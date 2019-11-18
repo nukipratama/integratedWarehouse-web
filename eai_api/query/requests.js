@@ -16,7 +16,7 @@ exports.requestsQuery = function(req, res) {
           [oid],
           function(error, rows, fields) {
             if (error) {
-              response.ok(400, error.code, res);
+              response.ok(400, error.sqlMessage, res);
             } else {
               response.ok(200, rows, res);
             }

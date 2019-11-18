@@ -17,7 +17,7 @@ exports.getItemQuery = function(req, res) {
           fields
         ) {
           if (error) {
-            response.ok(400, error.code, res);
+            response.ok(400, error.sqlMessage, res);
           } else {
             response.ok(200, rows, res);
           }
@@ -42,7 +42,7 @@ exports.getItemDetailsQuery = function(req, res) {
           [barang_id],
           function(error, rows, fields) {
             if (error) {
-              response.ok(400, error.code, res);
+              response.ok(400, error.sqlMessage, res);
             } else {
               response.ok(200, rows, res);
             }

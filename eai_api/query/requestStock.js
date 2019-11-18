@@ -19,7 +19,7 @@ exports.requestStockQuery = function(req, res) {
           [oid, bid, qty],
           function(error, rows, fields) {
             if (error) {
-              response.ok(400, error.code, res);
+              response.ok(400, error.sqlMessage, res);
             } else {
               rows.message = "Data Inserted";
               response.ok(200, rows, res);
