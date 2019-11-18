@@ -44,3 +44,8 @@ exports.requests = function(req, res) {
   var requestStock = require("./query/requests");
   requestStock.requestsQuery(req, res);
 };
+
+exports.updateRequest = function(req, res) {
+  var updateRequest = require("./query/updateRequest");
+  updateRequest.updateRequestQuery(req, res);
+};

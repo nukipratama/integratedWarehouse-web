@@ -42,3 +42,8 @@
 
 - method = GET
 - endpoint = localhost:3000/{outletID}/requests
+
+## requestStock (WAREHOUSE) = mengupdate status request barang
+
+- method = PUT
+- endpoint = localhost:3000/{outletID}/requestStock/{no}

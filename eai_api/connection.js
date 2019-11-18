@@ -4,7 +4,8 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "nuki",
-  database: "db_awn_api"
+  database: "db_awn_api",
+  multipleStatements: true
 });
 
 con.connect(function(err) {
