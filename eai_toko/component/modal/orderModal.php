@@ -25,15 +25,15 @@
         </div>
     </div>
 </div>
-<link rel="stylesheet" href="http://localhost/eai_toko/eai_toko/bower_components/bootstrap-sweetalert/dist/sweetalert.css" />
-<script src="http://localhost/eai_toko/eai_toko/bower_components/bootstrap-sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="<?= $_SESSION['url'] ?>bower_components/bootstrap-sweetalert/dist/sweetalert.css" />
+<script src="<?= $_SESSION['url'] ?>bower_components/bootstrap-sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $("#postOrder").click(function(event) {
         $('#orderModal').modal('hide');
         var barang_qty = $("input[type=number][id=barang_qty]").val();
         var barang_id = $("input[type=hidden][id=barang_id]").val();
         $.ajax({
-            url: "http://localhost/eai_toko/eai_toko/script/requestItem.php",
+            url: "<?= $_SESSION['url'] ?>script/requestItem.php",
             type: "POST",
             data: {
                 barang_qty: barang_qty,
@@ -52,7 +52,7 @@
                             closeOnConfirm: false
                         },
                         function() {
-                            $(location).attr('href', "http://localhost/eai_toko/eai_toko/page_warehouse.php");
+                            $(location).attr('href', "<?= $_SESSION['url'] ?>page_warehouse.php");
                         });
                 }
             },

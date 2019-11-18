@@ -30,7 +30,7 @@ include './component/template/header.php';
                         <td><?= $key['barang_name'] ?></td>
                         <td><?= $key['barang_cat'] ?></td>
                         <td><?= 'Rp.' . $key['barang_price'] ?></td>
-                        <td><a class="btn btn-info" href="http://localhost/eai_toko/eai_toko/page_itemDetails.php?id=<?= $key['barang_id'] ?>"><i class="fas fa-info-circle text-white"></i> Details
+                        <td><a class="btn btn-info" href="<?= $_SESSION['url'] ?>page_itemDetails.php?id=<?= $key['barang_id'] ?>"><i class="fas fa-info-circle text-white"></i> Details
                             </a></td>
                     </tr>
                 <?php

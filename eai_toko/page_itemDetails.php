@@ -8,7 +8,7 @@ include './component/template/header.php';
     $request = json_decode($request, true);
     foreach ($request["values"] as $key) {
         ?>
-        <h2><a href="http://localhost/eai_toko/eai_toko/page_warehouse.php"><i class="fas fa-chevron-circle-left"></i></a> <?= $key["barang_name"] ?></h2>
+        <h2><a href="<?= $_SESSION['url'] ?>page_warehouse.php"><i class="fas fa-chevron-circle-left"></i></a> <?= $key["barang_name"] ?></h2>
         <div class="divider"></div>
         <div class="m-2 row">
             <div class="col-md-4 bg-white">
