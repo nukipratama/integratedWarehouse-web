@@ -38,7 +38,7 @@
 - endpoint = localhost:3000/{outletID}/requestStock/{barang_id}
 - body = req_barangQty
 
-## requests (WAREHOUSE) = menampilkan katalog detail barang
+## requests (WAREHOUSE) = menampilkan semua request order cabang
 
 - method = GET
 - endpoint = localhost:3000/{outletID}/requests
@@ -47,3 +47,8 @@
 
 - method = PUT
 - endpoint = localhost:3000/{outletID}/requestStock/{no}
+
+## stocks = menampilkan stock cabang
+
+- method = GET
+- endpoint = localhost:3000/{outletID}/stocks

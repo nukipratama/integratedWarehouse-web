@@ -1,5 +1,4 @@
 <?php
-session_start();
 include './component/template/header.php';
 ?>
 <div class="transition-fade">

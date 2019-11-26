@@ -7,6 +7,7 @@ module.exports = function(app) {
   app.route("/:outletID/login/").get(todoList.login);
   app.route("/:outletID/requests/").get(todoList.requests);
   app.route("/:outletID/items/").get(todoList.getItem);
+  app.route("/:outletID/stocks/").get(todoList.getStock);
   app.route("/:outletID/items/:barang_id").get(todoList.getItemDetails);
   // post
   app.route("/:outletID/addUser/").post(todoList.addUser);

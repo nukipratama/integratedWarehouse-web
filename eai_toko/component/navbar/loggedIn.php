@@ -53,6 +53,18 @@
                     </li>
                 </ul>
             </li>
+            <li id="menuTransaction">
+                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-cash-register"></i> Transaction</a>
+
+                <ul class="collapse list-unstyled" id="pageSubmenu2">
+                    <li>
+                        <a href="https://localhost/eai_toko/eai_toko/page_cashier.php">Cashier</a>
+                    </li>
+                    <li>
+                        <a href="https://localhost/eai_toko/eai_toko/page_history.php">History</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <center>
             <span class="text-center text-muted ">&copy; 2019 AWN POS</span>

@@ -18,61 +18,65 @@ foreach ($request["values"] as $index => $value) {
 }
 ?>
 
+
 <div class="transition-fade text-white">
-    <h2><i class="fas fa-boxes"></i> Stock</h2>
+    <h2><i class="fas fa-monet-bill-alt"></i> Cashier</h2>
     <div class="divider"></div>
     <div class="mt-3 row justify-content-end">
-        <div class="col-md-8">
-            <button class="btn btn-secondary btnTrigger" id="all" type="button">All</button>
-            <?php foreach ($array as $key) : ?>
-                <button class="btn btn-secondary btnTrigger" id="<?= $key ?>" type="button"><?= $key ?></button>
-            <?php endforeach; ?>
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="input-group">
-                <input type="text" class="form-control" id="inputFilter" placeholder="search warehouse..">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
+                <span class="text-black text-center">
+                    Select item below..
+                </span>
+                <br>
+                <select class="select2-demo w-100" name="items[]"></select>
             </div>
         </div>
-
-
     </div>
-    <div class="row" id="btnFilter">
-        <?php
-        foreach ($request["values"] as $key) {
-            ?>
-            <div class="cards col-md-12 mt-3 <?= $key['barang_cat'] ?>" id="">
-                <a href="<?= $_SESSION['url'] ?>page_itemDetails.php?id=<?= $key['barang_id'] ?>">
+    <div class="mt-3 row">
+        <div class="col-md-12">
+            <div id="cart">
+                <div class="cards col-md-12 mt-3 <?= $key['barang_cat'] ?>" id="">
                     <div class="card text-dark h-100 w-100">
                         <div class="card-body">
                             <div class="row text-center">
                                 <div class="col-md-4">
                                     <span class="text-muted">Name</span>
-                                    <h5 class="card-title" id="name"><?= $key["barang_name"] ?></h5>
+                                    <h5 class="card-title" id="name">Item Name</h5>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <span class="text-muted">Category</span>
-                                    <h5 class="card-title" id="cat"><?= $key["barang_cat"] ?></h5>
+                                    <h5 class="card-title" id="cat">Item Category</h5>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <span class="text-muted">Quantity</span>
-                                    <h5 class="card-title" id="qty"><?= $key["stock_barangQty"] ?></h5>
+                                    <br>
+                                    <input type="number" name="" id="">
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-danger mt-3"><i class="fas fa-trash-alt"></i> Remove</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-        <?php
-        }
-        ?>
+        </div>
     </div>
 </div>
-<script src="./component/cardFilter/cardFilter.js"></script>
+<script>
+    var stock = <?php echo json_encode($request["values"]); ?>;
+    var data = [];
+    for (index = 0; index < stock.length; ++index) {
+        data.push({
+            id: stock[index].no,
+            text: stock[index].barang_name + " (Qty: " + stock[index].stock_barangQty + ")"
+        })
+    }
+    $(".select2-demo").select2({
+        data: data
+    })
+</script>
 <?php
 include './component/template/footer.php';
 ?>

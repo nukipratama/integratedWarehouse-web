@@ -1,5 +1,4 @@
 <?php
-session_start();
 include './component/template/header.php';
 $response = file_get_contents("http://localhost:3000/" . $_SESSION['outletID'] . "/requests");
 $response = json_decode($response, true);
