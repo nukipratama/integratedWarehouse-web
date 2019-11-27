@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-if (isset($_POST['barang_id'])) {
+if (isset($_POST['barangObject'])) {
+    $barangObject = json_encode($_POST['barangObject']);
     $data = [
-        'req_barangQty' => $_POST['barang_qty']
+        'barangObject' => $barangObject,
+        'totalPrice' => $_POST['totalPrice']
     ];
     $payload = json_encode($data);
     $options = array(
@@ -15,7 +17,7 @@ if (isset($_POST['barang_id'])) {
         CURLOPT_POSTFIELDS        => $payload
     );
 
-    $ch = curl_init('http://localhost:3000/' . $_SESSION['outletID'] . '/requestStock/' . $_POST['barang_id']);
+    $ch = curl_init('http://localhost:3000/' . $_SESSION['outletID'] . '/transaction');
     curl_setopt_array($ch, $options);
     $response = json_decode(curl_exec($ch), true);
     echo $response['status'];

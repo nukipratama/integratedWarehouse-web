@@ -54,3 +54,12 @@ exports.getStock = function(req, res) {
   var getItem = require("./query/getStock");
   getItem.getStockQuery(req, res);
 };
+
+exports.transaction = function(req, res) {
+  var transaction = require("./query/transaction");
+  transaction.transactionQuery(req, res);
+};
+exports.getTransaction = function(req, res) {
+  var getTransaction = require("./query/getTransaction");
+  getTransaction.getTransactionQuery(req, res);
+};

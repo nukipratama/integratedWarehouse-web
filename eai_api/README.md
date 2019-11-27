@@ -52,3 +52,14 @@
 
 - method = GET
 - endpoint = localhost:3000/{outletID}/stocks
+
+## transaction = menambahkan daftar transaksi
+
+- method = POST
+- endpoint = localhost:3000/{outletID}/transaction
+- body = barangObject,totalPrice
+
+## transaction = menampilkan semua daftar transaksi
+
+- method = GET
+- endpoint = localhost:3000/{outletID}/transaction
