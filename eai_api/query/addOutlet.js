@@ -27,6 +27,7 @@ exports.addOutletQuery = function(req, res) {
                 response.ok(400, error.sqlMessage, res);
               } else {
                 rows.message = "Data Inserted";
+                rows.outletID = oid;
                 response.ok(200, rows, res);
               }
             }

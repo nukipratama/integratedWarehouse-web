@@ -21,7 +21,9 @@ function totalPrice() {
   var total = (total / 1000).toFixed(3);
   return total;
 }
-
+$(document).on("change", "input", function() {
+  $("#totalPrice").html(totalPrice);
+});
 $(document).ready(function() {
   var data = [];
   for (index = 0; index < stock.length; ++index) {

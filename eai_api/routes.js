@@ -9,6 +9,8 @@ module.exports = function(app) {
   app.route("/:outletID/items/").get(todoList.getItem);
   app.route("/:outletID/stocks/").get(todoList.getStock);
   app.route("/:outletID/transaction/").get(todoList.getTransaction);
+  app.route("/:warehouseID/outlet/").get(todoList.outletAll);
+  app.route("/:warehouseID/outlet/:outletID").get(todoList.outlet);
   app.route("/:outletID/items/:barang_id").get(todoList.getItemDetails);
   // post
   app.route("/:outletID/addUser/").post(todoList.addUser);

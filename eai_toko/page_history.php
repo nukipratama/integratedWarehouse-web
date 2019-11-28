@@ -18,7 +18,7 @@ $request = json_decode($request, true);
                     <div class="card text-dark h-100 w-100">
                         <div class="card-body">
                             <div class="row text-center">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <span class="text-muted">Transaction ID</span>
                                     <h5 class="card-title" id="no"><?= $key['no'] ?></h5>
                                 </div>
@@ -26,7 +26,7 @@ $request = json_decode($request, true);
                                     <span class="text-muted">Total Price</span>
                                     <h5 class="card-title" id="price"><?= 'IDR ' . $key["history_totalPrice"] ?></h5>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <span class="text-muted">Date</span>
                                     <h5 class="card-title" id="date">
                                         <?php

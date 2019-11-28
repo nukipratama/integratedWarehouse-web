@@ -13,6 +13,18 @@ exports.transactionQuery = function(req, res) {
       } else {
         var barangObject = req.body.barangObject;
         var totalPrice = req.body.totalPrice;
+        var barangExport = JSON.parse(barangObject);
+        for (var index = 0; index < barangExport.length; ++index) {
+          connection.query(
+            "UPDATE `tb_stock` SET `stock_barangQty`=`stock_barangQty` - ? WHERE `stock_barangID` = ? AND `stock_outletID` = ?",
+            [barangExport[index].qty, barangExport[index].id, oid],
+            function(error, rows, fields) {
+              if (error) {
+                response.ok(400, error.sqlMessage, res);
+              }
+            }
+          );
+        }
         connection.query(
           "INSERT INTO `tb_history`(`history_barangObject`,`history_totalPrice`,`history_outletId`) VALUES (?,?,?)",
           [barangObject, totalPrice, oid],
@@ -20,7 +32,7 @@ exports.transactionQuery = function(req, res) {
             if (error) {
               response.ok(400, error.sqlMessage, res);
             } else {
-              rows.message = "Data Inserted";
+              rows.message = "Data Updated";
               response.ok(200, rows, res);
             }
           }
