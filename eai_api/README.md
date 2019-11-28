@@ -1,7 +1,7 @@
 ## login = mencocokkan data login aplikasi
 
 - method = GET
-- endpoint = localhost:3000/{outletID}/login
+- endpoint = localhost:3000/login
 - body = users_uname,users_pass
 
 ## addUser (WAREHOUSE) = menambahkan user

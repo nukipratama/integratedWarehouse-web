@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
         CURLOPT_POSTFIELDS        => $payload
     );
 
-    $ch = curl_init('http://localhost:3000/warehouse/login');
+    $ch = curl_init('http://localhost:3000/login');
     curl_setopt_array($ch, $options);
     $response = json_decode(curl_exec($ch), true);
     switch ($response['status']) {

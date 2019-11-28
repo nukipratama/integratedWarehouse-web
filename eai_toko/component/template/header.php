@@ -49,7 +49,7 @@ $_SESSION['url'] = "http://7c8f7674.ngrok.io/eai_toko/eai_toko/";
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <title>Barokah Mart POS</title>
+  <title>Integrated Warehouse POS</title>
 </head>
 
 <body class="bg-github">

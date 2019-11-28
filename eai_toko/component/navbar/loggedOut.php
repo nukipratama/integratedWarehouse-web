@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <span class="text-primary">B</span>arokah
-        <span class="text-youtube">M</span>art
+        <span class="text-primary">I</span>ntegrated
+        <span class="text-youtube">W</span>arehouse
         <span class="text-success font-weight-bold">POS</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
