@@ -28,28 +28,15 @@
 
         <ul class="list-unstyled components">
             <p class="text-center"><i class="fas fa-ellipsis-h"></i> Menu</p>
-            <li id="menuDashboard">
-                <a href="https://localhost/eai_toko/eai_toko/page_dashboard.php"><i class="fas fa-chart-line"></i> Dashboard</a>
-            </li>
-            <li id="menuProfile">
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user-alt"></i> Profile</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_editProfile.php">Edit Profile</a>
-                    </li>
-                    <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_changePassword.php">Change Password</a>
-                    </li>
-                </ul>
-            </li>
+
             <li id="menuItems">
                 <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-store"></i> Items</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu1">
                     <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_stock.php">Stock</a>
+                        <a href="<?=$_SESSION['url']?>page_stock.php">Stock</a>
                     </li>
                     <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_warehouse.php">Warehouse</a>
+                        <a href="<?=$_SESSION['url']?>page_warehouse.php">Warehouse</a>
                     </li>
                 </ul>
             </li>
@@ -58,10 +45,10 @@
 
                 <ul class="collapse list-unstyled" id="pageSubmenu2">
                     <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_cashier.php">Cashier</a>
+                        <a href="<?=$_SESSION['url']?>page_cashier.php">Cashier</a>
                     </li>
                     <li>
-                        <a href="https://localhost/eai_toko/eai_toko/page_history.php">History</a>
+                        <a href="<?=$_SESSION['url']?>page_history.php">History</a>
                     </li>
                 </ul>
             </li>

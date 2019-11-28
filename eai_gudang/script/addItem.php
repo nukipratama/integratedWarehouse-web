@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $uploadfile = $uploaddir . basename($_FILES['barang_img']['name']);
 
     if (move_uploaded_file($_FILES['barang_img']['tmp_name'], $uploadfile)) {
-        $barang_img = "https://localhost/eai_toko/eai_gudang/upload/" . $_FILES['barang_img']['name'];
+        $barang_img = "http://" . $_SERVER['HTTP_HOST'] . "/eai_toko/eai_gudang/upload/" . $_FILES['barang_img']['name'];
 
         $data = [
             'barang_name' => $_POST['barang_name'],
@@ -30,8 +30,9 @@ if (isset($_POST['submit'])) {
         ?>
         <script>
             alert("New item added : <?= $_POST['barang_name'] ?>");
-            window.location.href = "../page_AddUser.php";
+            window.location.href = "../page_productList.php";
         </script>
+
 <?php
     } else {
         echo "Possible file upload attack!\n";
