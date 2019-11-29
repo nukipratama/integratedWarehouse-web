@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `tb_barang`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_barang` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `barang_id` varchar(255) NOT NULL,
+  `barang_id` varchar(191) NOT NULL,
   `barang_name` varchar(191) NOT NULL,
   `barang_desc` varchar(191) NOT NULL,
   `barang_cat` varchar(191) NOT NULL,
   `barang_price` int(20) NOT NULL,
-  `barang_img` varchar(255) NOT NULL,
+  `barang_img` varchar(191) NOT NULL,
   PRIMARY KEY (`no`),
   UNIQUE KEY `barang_id` (`barang_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,12 +54,12 @@ DROP TABLE IF EXISTS `tb_history`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_history` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `history_barangObject` varchar(255) NOT NULL,
+  `history_barangObject` varchar(191) NOT NULL,
   `history_totalPrice` int(255) NOT NULL,
   `history_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `history_outletId` varchar(255) NOT NULL,
+  `history_outletId` varchar(191) NOT NULL,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,15 +81,15 @@ DROP TABLE IF EXISTS `tb_outlet`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_outlet` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `outlet_id` varchar(255) NOT NULL,
+  `outlet_id` varchar(191) NOT NULL,
   `outlet_role` varchar(191) NOT NULL,
-  `outlet_name` varchar(255) NOT NULL,
-  `outlet_desc` varchar(255) NOT NULL,
-  `outlet_address` varchar(255) NOT NULL,
+  `outlet_name` varchar(191) NOT NULL,
+  `outlet_desc` varchar(191) NOT NULL,
+  `outlet_address` varchar(191) NOT NULL,
   `outlet_joindate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`no`),
   UNIQUE KEY `outlet_id` (`outlet_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,13 +111,13 @@ DROP TABLE IF EXISTS `tb_request`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_request` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `req_outletID` varchar(255) NOT NULL,
-  `req_barangID` varchar(255) NOT NULL,
+  `req_outletID` varchar(191) NOT NULL,
+  `req_barangID` varchar(191) NOT NULL,
   `req_barangQty` int(191) NOT NULL,
   `req_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `req_status` int(100) NOT NULL DEFAULT '0',
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,11 +139,11 @@ DROP TABLE IF EXISTS `tb_stock`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_stock` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `stock_outletID` varchar(255) NOT NULL,
-  `stock_barangID` varchar(255) NOT NULL,
+  `stock_outletID` varchar(191) NOT NULL,
+  `stock_barangID` varchar(191) NOT NULL,
   `stock_barangQty` int(255) NOT NULL,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,15 +165,15 @@ DROP TABLE IF EXISTS `tb_users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_users` (
   `no` int(100) NOT NULL AUTO_INCREMENT,
-  `users_Uname` varchar(255) NOT NULL,
+  `users_Uname` varchar(191) NOT NULL,
   `users_pass` varchar(191) NOT NULL,
-  `users_email` varchar(255) NOT NULL,
-  `users_role` varchar(255) NOT NULL,
-  `users_outletID` varchar(255) NOT NULL,
+  `users_email` varchar(191) NOT NULL,
+  `users_role` varchar(191) NOT NULL,
+  `users_outletID` varchar(191) NOT NULL,
   PRIMARY KEY (`no`),
   UNIQUE KEY `users_Uname` (`users_Uname`),
   UNIQUE KEY `users_email` (`users_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
