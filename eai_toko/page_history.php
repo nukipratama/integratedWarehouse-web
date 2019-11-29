@@ -24,14 +24,14 @@ $request = json_decode($request, true);
                                 </div>
                                 <div class="col-md-4">
                                     <span class="text-muted">Total Price</span>
-                                    <h5 class="card-title" id="price"><?= 'IDR ' . $key["history_totalPrice"] ?></h5>
+                                    <h5 class="card-title" id="price"><?= 'Rp ' . $key["history_totalPrice"] ?></h5>
                                 </div>
                                 <div class="col-md-5">
                                     <span class="text-muted">Date</span>
                                     <h5 class="card-title" id="date">
                                         <?php
                                             $dt =  strtotime($key["history_date"]);
-                                            echo date("D d-m-Y H:i:s T", $dt);
+                                            echo date("l j-M-Y H:i:s T", $dt);
                                             ?>
                                     </h5>
                                 </div>

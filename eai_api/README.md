@@ -64,6 +64,11 @@
 - method = GET
 - endpoint = localhost:3000/{outletID}/transaction
 
+## transaction = menampilkan semua daftar transaksi
+
+- method = GET
+- endpoint = localhost:3000/{outletID}/transaction/{transactionID}
+
 ## outlet (WAREHOUSE) = menampilkan keterangan outlet
 
 - method = GET

@@ -20,11 +20,15 @@ if (isset($_POST['submit'])) {
     $response = json_decode(curl_exec($ch), true);
     switch ($response['status']) {
         case 200:
-            $_SESSION['outletID'] = $response['values'][0]['users_outletID'];
-            $_SESSION['loginName'] = $response['values'][0]['users_Uname'];
-            $_SESSION['loginRole'] = $response['values'][0]['users_role'];
-            $_SESSION['loggedIn'] = true;
-            return header("Location:../page_requestList.php");
+            if ($response['values'][0]['users_role'] === "Logistic") :
+                $_SESSION['outletID'] = $response['values'][0]['users_outletID'];
+                $_SESSION['loginName'] = $response['values'][0]['users_Uname'];
+                $_SESSION['loginRole'] = $response['values'][0]['users_role'];
+                $_SESSION['loggedIn'] = true;
+                return header("Location:../page_requestList.php");
+            else :
+                return header("Location:../index.php?status=401");
+            endif;
         case 401:
             return header("Location:../index.php?status=401");
         default:

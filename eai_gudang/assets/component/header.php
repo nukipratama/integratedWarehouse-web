@@ -14,7 +14,7 @@ if (!isset($_SESSION['loggedIn'])) {
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automatic Warehouse
+        Integrated Warehouse Logistic
     </title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport" />
     <!--     Fonts and icons     -->
@@ -32,7 +32,7 @@ if (!isset($_SESSION['loggedIn'])) {
         <div class="sidebar" data-color="purple" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
             <div class="logo">
                 <a href="./" class="simple-text logo-normal">
-                    Automatic Warehouse
+                    Integrated Warehouse<br>Logistic
                 </a>
             </div>
             <div class="sidebar-wrapper">

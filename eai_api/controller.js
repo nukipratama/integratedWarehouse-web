@@ -65,6 +65,11 @@ exports.getTransaction = function(req, res) {
   getTransaction.getTransactionQuery(req, res);
 };
 
+exports.getTransactionDetail = function(req, res) {
+  var getTransaction = require("./query/getTransaction");
+  getTransaction.getTransactionDetailQuery(req, res);
+};
+
 exports.outlet = function(req, res) {
   var outlets = require("./query/outlets");
   outlets.outletsQuery(req, res);

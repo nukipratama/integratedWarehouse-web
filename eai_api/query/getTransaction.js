@@ -26,3 +26,28 @@ exports.getTransactionQuery = function(req, res) {
     }
   );
 };
+exports.getTransactionDetailQuery = function(req, res) {
+  var oid = req.params.outletID;
+  var tid = req.params.transactionID;
+  connection.query(
+    "SELECT * FROM `tb_outlet` WHERE `outlet_id`=?",
+    [oid],
+    function(error, rows, fields) {
+      if (rows.length < 1) {
+        response.ok(401, "rows", res);
+      } else {
+        connection.query(
+          "SELECT * FROM `tb_history` WHERE `no` = ? ORDER BY `no` DESC",
+          [tid],
+          function(error, rows, fields) {
+            if (error) {
+              response.ok(400, error.sqlMessage, res);
+            } else {
+              response.ok(200, rows, res);
+            }
+          }
+        );
+      }
+    }
+  );
+};

@@ -1,7 +1,8 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Jakarta');
-$_SESSION['url'] = "http://7c8f7674.ngrok.io/eai_toko/eai_toko/";
+// $_SESSION['url'] = "http://38f58352.ngrok.io/eai_toko/eai_toko/";
+$_SESSION['url'] = "http://localhost/eai_toko/eai_toko/";
 ?>
 <!DOCTYPE html>
 <html lang="en">

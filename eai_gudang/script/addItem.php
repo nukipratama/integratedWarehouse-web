@@ -1,11 +1,11 @@
 <?php
 if (isset($_POST['submit'])) {
 
-    $uploaddir = '../upload/';
+    $uploaddir = '../../upload/';
     $uploadfile = $uploaddir . basename($_FILES['barang_img']['name']);
 
     if (move_uploaded_file($_FILES['barang_img']['tmp_name'], $uploadfile)) {
-        $barang_img = "http://" . $_SERVER['HTTP_HOST'] . "/eai_toko/eai_gudang/upload/" . $_FILES['barang_img']['name'];
+        $barang_img = "../upload/" . $_FILES['barang_img']['name'];
 
         $data = [
             'barang_name' => $_POST['barang_name'],

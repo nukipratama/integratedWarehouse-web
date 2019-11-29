@@ -18,7 +18,7 @@ include './component/template/header.php';
             <div class="col-md-8 text-white">
                 <p class="lead text-white">Name : <?= $key['barang_name'] ?></p>
                 <p class="lead text-white">Category : <?= $key['barang_cat'] ?></p>
-                <p class="lead text-white">Price : <?= $key['barang_price'] ?></p>
+                <p class="lead text-white">Price : <?= 'Rp ' . $key['barang_price'] ?></p>
                 <p class="lead text-white">Overview : <?= $key['barang_desc'] ?></p>
                 <button type="button" class="btn btn-success w-100" data-toggle="modal" data-target="#orderModal">
                     Request Order
