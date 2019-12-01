@@ -1,4 +1,23 @@
-## login = mencocokkan data login aplikasi
+## DEMO
+
+- Gudang :
+  username:password = warehouse:warehouse
+  [nukipratama.tech/eai/gudang](https://nukipratama.tech/eai/gudang)
+- Toko :
+  username:password = barokah:barokah
+  [nukipratama.tech/eai/toko](https:/nukipratama.tech/eai/toko)
+- API :
+  [nukipratama.tech:3000/warehouse/items](http:/nukipratama.tech:3000/warehouse/items)
+
+## Installation
+
+- Create new MySQL database named "db_awn_api"
+- Import db_awn_api.sql to your new database
+- Change api/connection.js depends on your mysql credentials
+- Run NodeJS server pointing to api/server.js file
+- API will be served at localhost:3000
+
+# login = mencocokkan data login aplikasi
 
 - method = GET
 - endpoint = localhost:3000/login
